@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/widgets/counter_widget.dart';
+import 'package:flutter_library/widgets/dropdown_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
 
 void main() {
@@ -56,7 +57,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             title: 'Sayaç',
                           )));
                 },
-                child: const Text('Sayaç'))
+                child: const Text('Sayaç')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        const DropdownWidget(title: 'Açılır Liste'),
+                  ));
+                },
+                child: const Text('Açılır Liste'))
           ],
         ),
       ),

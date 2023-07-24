@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/widgets/counter_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Library'),
     );
   }
 }
@@ -43,11 +44,19 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const ImageWigdets(
-                          title: 'Resim Getirme (Internet-)',
+                          title: 'Resim Getirme (Internet)',
                         )));
               },
               child: const Text('Resim Getirme (Internet)'),
-            )
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const CounterWidget(
+                            title: 'Sayaç',
+                          )));
+                },
+                child: const Text('Sayaç'))
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/widgets/appbar_action_widget.dart';
 import 'package:flutter_library/widgets/counter_widget.dart';
 import 'package:flutter_library/widgets/dropdown_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
@@ -65,7 +66,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         const DropdownWidget(title: 'Açılır Liste'),
                   ));
                 },
-                child: const Text('Açılır Liste'))
+                child: const Text('Açılır Liste')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) =>
+                        const AppbarActionWidget(title: 'Çubuğu Eylemleri'),
+                  ));
+                },
+                child: const Text('Uygulama Çubuğu Eylemleri'))
           ],
         ),
       ),

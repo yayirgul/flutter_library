@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) =>
-                        const AppbarActionWidget(title: 'Çubuğu Eylemleri'),
+                        const AppbarActionWidget(title: 'Çubuk Eylemleri'),
                   ));
                 },
                 child: const Text('Uygulama Çubuğu Eylemleri')),

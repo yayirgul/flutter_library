@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 class CounterWidget extends StatefulWidget {
@@ -9,12 +11,40 @@ class CounterWidget extends StatefulWidget {
 }
 
 class _CounterWidgetState extends State<CounterWidget> {
+  int _counter = 0;
   @override
   Widget build(BuildContext context) {
+    debugPrint('Build çalıştırıldı...');
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      body: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          const Text(
+            'Tuşa basılma miktarı',
+            style: TextStyle(fontSize: 24),
+          ),
+          Text(_counter.toString(),
+              style: Theme.of(context).textTheme.displayLarge)
+        ]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          debugPrint('Düğmeye tıklandı...');
+          debugPrint('Sayaç Değeri : $_counter');
+          increase_counter();
+        },
+        child: const Icon(Icons.add),
+      ),
     );
+  }
+
+  void increase_counter() {
+    setState(() {
+      _counter++;
+    });
+    debugPrint('Sayaç arttır fonksiyonu çalıştırıldı...');
+    debugPrint('SAYAÇ DEĞERİ : $_counter');
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/widgets/appbar_action_widget.dart';
+import 'package:flutter_library/widgets/button_widget.dart';
 import 'package:flutter_library/widgets/counter_widget.dart';
 import 'package:flutter_library/widgets/dropdown_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
@@ -74,7 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         const AppbarActionWidget(title: 'Çubuğu Eylemleri'),
                   ));
                 },
-                child: const Text('Uygulama Çubuğu Eylemleri'))
+                child: const Text('Uygulama Çubuğu Eylemleri')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ButtonWidget(
+                      title: 'Temel Düğmeler',
+                    ),
+                  ));
+                },
+                child: const Text('Temel Düğmeler'))
           ],
         ),
       ),

@@ -28,11 +28,11 @@ class _DropdownWidgetState extends State<DropdownWidget> {
                   DropdownMenuItem<String>(value: item, child: Text(item)))
               .toList(),
           value: selected,
-          onChanged: (String? _selected) {
+          onChanged: (String? selectedItem) {
             setState(() {
               debugPrint('onChanged fonksiyonu çalıştırıldı...');
-              debugPrint('Seçilen Değer : $_selected');
-              selected = _selected;
+              debugPrint('Seçilen Değer : $selectedItem');
+              selected = selectedItem;
             });
           },
         ),

@@ -16,6 +16,7 @@ class _AppbarActionWidgetState extends State<AppbarActionWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 194, 166, 242),
         title: Text(widget.title),
         actions: [Menu(actions)],
       ),

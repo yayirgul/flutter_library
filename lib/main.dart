@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/widgets/appbar_action_widget.dart';
 import 'package:flutter_library/widgets/button_widget.dart';
+import 'package:flutter_library/widgets/custom_scrollview_widget.dart';
 import 'package:flutter_library/widgets/gridview_widget.dart';
 import 'package:flutter_library/widgets/list_tile_card_widget.dart';
 import 'package:flutter_library/widgets/counter_widget.dart';
@@ -109,35 +110,42 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ));
                 },
-                child: const Text('Temel Düğmeler')),
+                child: const Text('Basic Butttons')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const CardListTileWidget(),
                   ));
                 },
-                child: const Text('Liste Kutucuğu ve Kart')),
+                child: const Text('List Tile and Card')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const ListViewProblemsWidget(),
                   ));
                 },
-                child: const Text('Liste Görünüm Problemi')),
+                child: const Text('List View Problems')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ListViewWidget(),
                   ));
                 },
-                child: const Text('Liste Görünüm - 1')),
+                child: const Text('List View')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => const GridViewWidget(),
                   ));
                 },
-                child: const Text('Izgara Görünüm'))
+                child: const Text('Grid View')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const CustomScrollViewWidget(),
+                  ));
+                },
+                child: const Text('Custom Scroll View'))
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/widgets/appbar_action_widget.dart';
 import 'package:flutter_library/widgets/button_widget.dart';
+import 'package:flutter_library/widgets/card_list_tile_widget.dart';
 import 'package:flutter_library/widgets/counter_widget.dart';
 import 'package:flutter_library/widgets/dropdown_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
@@ -84,7 +85,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ));
                 },
-                child: const Text('Temel Düğmeler'))
+                child: const Text('Temel Düğmeler')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const CardListTileWidget(),
+                  ));
+                },
+                child: const Text('Card List Tile'))
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/widgets/appbar_action_widget.dart';
 import 'package:flutter_library/widgets/button_widget.dart';
+import 'package:flutter_library/widgets/gridview_widget.dart';
 import 'package:flutter_library/widgets/list_tile_card_widget.dart';
 import 'package:flutter_library/widgets/counter_widget.dart';
 import 'package:flutter_library/widgets/dropdown_widget.dart';
@@ -129,7 +130,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder: (context) => ListViewWidget(),
                   ));
                 },
-                child: const Text('Liste Görünüm - 1'))
+                child: const Text('Liste Görünüm - 1')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const GridViewWidget(),
+                  ));
+                },
+                child: const Text('Izgara Görünüm'))
           ],
         ),
       ),

@@ -6,9 +6,30 @@ import 'package:flutter_library/widgets/counter_widget.dart';
 import 'package:flutter_library/widgets/dropdown_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
 import 'package:flutter_library/widgets/listview_problem.dart';
+import 'package:flutter_library/widgets/listview_widget.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() {
   runApp(const MyApp());
+  configLoading();
+}
+
+void configLoading() {
+  EasyLoading.instance
+    ..displayDuration = const Duration(milliseconds: 2000)
+    ..indicatorType = EasyLoadingIndicatorType.fadingCircle
+    ..loadingStyle = EasyLoadingStyle.custom
+    ..indicatorSize = 45.0
+    ..radius = 10.0
+    ..progressColor = Colors.yellow
+    ..backgroundColor = Colors.green
+    ..indicatorColor = Colors.yellow
+    ..textColor = Colors.white
+    ..maskColor = Colors.blue.withOpacity(0.5)
+    ..userInteractions = true
+    ..dismissOnTap = true;
+  //..customAnimation = CustomAnimation();
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +43,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Library'),
+      builder: EasyLoading.init(),
     );
   }
 }
@@ -100,7 +122,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder: (context) => const ListViewProblemsWidget(),
                   ));
                 },
-                child: const Text('Liste Görünüm Problemi'))
+                child: const Text('Liste Görünüm Problemi')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ListViewWidget(),
+                  ));
+                },
+                child: const Text('Liste Görünüm - 1'))
           ],
         ),
       ),

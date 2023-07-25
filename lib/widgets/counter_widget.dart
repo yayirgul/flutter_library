@@ -17,7 +17,21 @@ class _CounterWidgetState extends State<CounterWidget> {
     debugPrint('Build çalıştırıldı...');
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        leading: Navigator.canPop(context)
+            ? IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                ))
+            : null,
+        title: Text(
+          widget.title,
+          style: const TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.deepPurple,
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [

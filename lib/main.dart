@@ -3,6 +3,7 @@ import 'package:flutter_library/widgets/appbar_action_widget.dart';
 import 'package:flutter_library/widgets/button_widget.dart';
 import 'package:flutter_library/widgets/custom_scrollview_widget.dart';
 import 'package:flutter_library/widgets/gridview_widget.dart';
+import 'package:flutter_library/widgets/home_widget.dart';
 import 'package:flutter_library/widgets/list_tile_card_widget.dart';
 import 'package:flutter_library/widgets/counter_widget.dart';
 import 'package:flutter_library/widgets/dropdown_widget.dart';
@@ -34,8 +35,14 @@ void configLoading() {
   //..customAnimation = CustomAnimation();
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +51,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Library'),
+      //home: const MyHomePage(title: 'Flutter Library'),
+      home: const HomeWidget(),
       builder: EasyLoading.init(),
     );
   }

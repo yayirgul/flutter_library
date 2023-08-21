@@ -7,6 +7,7 @@ import 'package:flutter_library/widgets/gridview_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
 import 'package:flutter_library/widgets/list_tile_card_widget.dart';
 import 'package:flutter_library/widgets/listview_widget.dart';
+import 'package:flutter_library/widgets/navigation_widget.dart';
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -23,7 +24,7 @@ class _HomeWidgetState extends State<HomeWidget> {
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
         title: const Text(
-          'Araç Kullanımları',
+          'Araçlar',
           style: TextStyle(color: Colors.white),
         ),
         shape: const RoundedRectangleBorder(
@@ -92,7 +93,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                             color: Colors.white),
                       ),
                       Text(
-                        'yayirgul@gmail.com',
+                        'yayirgul@........com',
                         style: TextStyle(
                           fontSize: 13,
                           color: Colors.white,
@@ -116,6 +117,29 @@ class _HomeWidgetState extends State<HomeWidget> {
           children: ListTile.divideTiles(
               color: const Color.fromARGB(255, 179, 179, 179),
               tiles: [
+                ListTile(
+                  trailing: const CircleAvatar(
+                    backgroundColor: Colors.deepPurple,
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                  title: const Text(
+                    'Navigations',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'MaybePop, CanPop, PushReplacament, PushNamed kullanımı',
+                    style: TextStyle(fontSize: 13),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const NavigationWidget(),
+                    ));
+                  },
+                ),
                 ListTile(
                   trailing: const CircleAvatar(
                     backgroundColor: Colors.deepPurple,

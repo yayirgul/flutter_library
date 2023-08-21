@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_library/widgets/appbar_action_widget.dart';
 import 'package:flutter_library/widgets/button_widget.dart';
+import 'package:flutter_library/widgets/custom_scrollview_widget.dart';
 import 'package:flutter_library/widgets/dropdown_widget.dart';
 import 'package:flutter_library/widgets/gridview_widget.dart';
 import 'package:flutter_library/widgets/image_widget.dart';
@@ -115,6 +116,29 @@ class _HomeWidgetState extends State<HomeWidget> {
           children: ListTile.divideTiles(
               color: const Color.fromARGB(255, 179, 179, 179),
               tiles: [
+                ListTile(
+                  trailing: const CircleAvatar(
+                    backgroundColor: Colors.deepPurple,
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                  title: const Text(
+                    'Custom Scroll View Widget',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'CustomScrollView, SliverGrid ve SliverPadding kullanımı',
+                    style: TextStyle(fontSize: 13),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const CustomScrollViewWidget(),
+                    ));
+                  },
+                ),
                 ListTile(
                   trailing: const CircleAvatar(
                     backgroundColor: Colors.deepPurple,
@@ -286,7 +310,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     );
   }
 
-  Padding TEST(BuildContext context) {
+  Padding testWidget(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Row(

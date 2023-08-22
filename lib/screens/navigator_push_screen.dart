@@ -1,7 +1,6 @@
-// ignore_for_file: non_constant_identifier_names, must_be_immutable
+// ignore_for_file: non_constant_identifier_names, must_be_immutable, curly_braces_in_flow_control_structures, avoid_print
 
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class NavigatorPushScreen extends StatelessWidget {
@@ -38,23 +37,43 @@ class NavigatorPushScreen extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ElevatedButton(
-                  onPressed: () {
-                    _random = Random().nextInt(100);
-                    // ignore: avoid_print
-                    print('Rastgele Sayı : $_random');
-                    Navigator.of(context).pop(_random);
-                  },
-                  child: const Text("Geri")),
-            ],
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      _random = Random().nextInt(100);
+                      print('Rastgele Sayı : $_random');
+                      Navigator.of(context).pop(_random);
+                    },
+                    child: const Text("Önceki Sayfaya Değerle Dön")),
+                ElevatedButton(
+                    onPressed: () {
+                      if (Navigator.canPop(context)) {
+                        // 2.Sayfaya gelinip gelinmediğini kontrol etmek için "canPop" kullanıyoruz.
+                        print('Navigator.canPop çalıştı.');
+                        Navigator.of(context).pop();
+                      } else {
+                        print('Navigator.canPop çalışmadı.');
+                      }
+                    },
+                    child: const Text(
+                        "Önceki Sayfaya (Navigator.canPop) kontrolü ile Dön")),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/NavigatorXScreen');
+                    },
+                    child: const Text(
+                      'X Sayfasına (Navigator.pushName) ile Git',
+                    )),
+              ],
+            ),
           ),
         ),
       ),
       onWillPop: () {
-        // AppBar'ın "leading" özelliğini kullandığım onWillPop özelliği devre dışı kalıyor.
+        // AppBar'ın "leading" özelliğini kullandığım için onWillPop özelliği devre dışı kalıyor.
         debugPrint('onWillPop kısmı çalıştı...');
         if (_random == 0) {
           _random = Random().nextInt(100);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_library/settings/route_generator.dart';
 import 'package:flutter_library/widgets/appbar_action_widget.dart';
 import 'package:flutter_library/widgets/button_widget.dart';
 import 'package:flutter_library/widgets/custom_scrollview_widget.dart';
@@ -54,6 +55,8 @@ class _MyAppState extends State<MyApp> {
       //home: const MyHomePage(title: 'Flutter Library'),
       home: const HomeWidget(),
       builder: EasyLoading.init(),
+      onGenerateRoute: RouteGenerator
+          .routeGenerator, // pushNamed yapısını kullanabilmek için "onGenerateRoute" methodu kullanılmalıdır.
     );
   }
 }

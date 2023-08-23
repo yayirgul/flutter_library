@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_library/screens/navigator_push_screen.dart';
 import 'package:flutter_library/screens/navigator_x_screen.dart';
+import 'package:flutter_library/screens/navigator_y_screen.dart';
 import 'package:flutter_library/widgets/home_widget.dart';
 
 class RouteGenerator {
@@ -24,6 +26,10 @@ class RouteGenerator {
         return _route(const HomeWidget(), settings);
       case '/NavigatorXScreen':
         return _route(const NavigatorXScreen(), settings);
+      case '/NavigatorPushScreen':
+        return _route(NavigatorPushScreen(), settings);
+      case '/NavigatorYScreen':
+        return _route(const NavigatorYScreen(), settings);
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(

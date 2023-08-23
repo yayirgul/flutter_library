@@ -36,7 +36,7 @@ class NavigatorPushScreen extends StatelessWidget {
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(top: 18),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,

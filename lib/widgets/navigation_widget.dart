@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_library/screens/navigator_end_screen.dart';
 import 'package:flutter_library/screens/navigator_push_screen.dart';
 
 class NavigationWidget extends StatelessWidget {
@@ -32,7 +33,76 @@ class NavigationWidget extends StatelessWidget {
               tiles: [
                 ListTile(
                   title: const Text(
-                    'Navigator.maybePop()',
+                    'N.pushNamed() Arguments',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'Navigator.pushNamed() arguments methodu kullanımı',
+                    style: TextStyle(fontSize: 13),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                        '/NavigatorStudentListScreen',
+                        arguments:
+                            60); // Sayfa adına göre yönlendirme işine yarıyor.
+                  },
+                  trailing: const CircleAvatar(
+                    backgroundColor: Colors.deepPurple,
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                ListTile(
+                  title: const Text(
+                    'N.pushNamed()',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'Navigator.pushNamed() kullanımı',
+                    style: TextStyle(fontSize: 13),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed(
+                        '/NavigatorPushScreen'); // Sayfa adına göre yönlendirme işine yarıyor.
+                  },
+                  trailing: const CircleAvatar(
+                    backgroundColor: Colors.deepPurple,
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                ListTile(
+                  title: const Text(
+                    'N.pushReplacement()',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    'Navigator.pushReplacement() kullanımı', // "pushReplacement()" methodu önceki sayfayı yenisiyle değiştirmeye yarıyor.
+                    style: TextStyle(fontSize: 13),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const NavigatorEndScreen(),
+                    ));
+                  },
+                  trailing: const CircleAvatar(
+                    backgroundColor: Colors.deepPurple,
+                    child: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                ListTile(
+                  title: const Text(
+                    'N.maybePop()',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   subtitle: const Text(
@@ -53,7 +123,7 @@ class NavigationWidget extends StatelessWidget {
                 ),
                 ListTile(
                   title: const Text(
-                    'Navigator.canPop()',
+                    'N.canPop()',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   subtitle: const Text(
@@ -97,7 +167,7 @@ class NavigationWidget extends StatelessWidget {
                 ),
                 ListTile(
                   title: const Text(
-                    'Navigator.Push.Then',
+                    'N.Push.Then',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   subtitle: const Text(
@@ -121,7 +191,7 @@ class NavigationWidget extends StatelessWidget {
                 ),
                 ListTile(
                   title: const Text(
-                    'Navigator.Push',
+                    'N.Push',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   subtitle: const Text(

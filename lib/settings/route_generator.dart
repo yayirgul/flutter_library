@@ -44,7 +44,7 @@ class RouteGenerator {
             appBar: AppBar(
               title: const Text('404'),
             ),
-            body: const Center(child: Text('Sayfa bulunamadı')),
+            body: const Center(child: Text('Sayfa bulunamadı.')),
           ),
         );
     }

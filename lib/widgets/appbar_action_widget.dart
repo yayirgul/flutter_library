@@ -11,7 +11,7 @@ class AppbarActionWidget extends StatefulWidget {
 }
 
 class _AppbarActionWidgetState extends State<AppbarActionWidget> {
-  List<String> actions = ['Yeni', 'Düzenle', 'Sil', 'Ayarlar'];
+  List<String> actions = ['Yeni', 'Düzenle', 'Sil', 'Ayarlar', 'Profil'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
